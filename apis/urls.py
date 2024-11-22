@@ -1,0 +1,81 @@
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('categories/', CategoryListAPIView.as_view(), name='category-list'),
+    path('categories/create/', CategoryCreateAPIView.as_view(), name='category-create'),
+    path('categories/<int:pk>/', CategoryRetrieveAPIView.as_view(), name='category-detail'),
+    path('categories/<int:pk>/update/', CategoryUpdateAPIView.as_view(), name='category-update'),
+    path('categories/<int:pk>/retrieve-update/', CategoryRetrieveUpdateAPIView.as_view(), name='category-retrieve-update'),
+    path('categories/<int:pk>/delete/', CategoryDestroyAPIView.as_view(), name='category-delete'),
+
+    path('worker-categories/', WorkerCategoryListAPIView.as_view(), name='worker-category-list'),
+    path('worker-categories/create/', WorkerCategoryCreateAPIView.as_view(), name='worker-category-create'),
+    path('worker-categories/<int:pk>/', WorkerCategoryRetrieveAPIView.as_view(), name='worker-category-detail'),
+    path('worker-categories/<int:pk>/update/', WorkerCategoryUpdateAPIView.as_view(), name='worker-category-update'),
+    path('worker-categories/<int:pk>/retrieve-update/', WorkerCategoryRetrieveUpdateAPIView.as_view(), name='worker-category-retrieve-update'),
+    path('worker-categories/<int:pk>/delete/', WorkerCategoryDestroyAPIView.as_view(), name='worker-category-delete'),
+
+    path('employer-categories/', EmployerCategoryListAPIView.as_view(), name='employer-category-list'),
+    path('employer-categories/create/', EmployerCategoryCreateAPIView.as_view(), name='employer-category-create'),
+    path('employer-categories/<int:pk>/', EmployerCategoryRetrieveAPIView.as_view(), name='employer-category-detail'),
+    path('employer-categories/<int:pk>/update/', EmployerCategoryUpdateAPIView.as_view(), name='employer-category-update'),
+    path('employer-categories/<int:pk>/retrieve-update/', EmployerCategoryRetrieveUpdateAPIView.as_view(), name='employer-category-retrieve-update'),
+    path('employer-categories/<int:pk>/delete/', EmployerCategoryDestroyAPIView.as_view(), name='employer-category-delete'),
+
+    path('countries/', CountryListAPIView.as_view(), name='country-list'),
+    path('countries/create/', CountryCreateAPIView.as_view(), name='country-create'),
+    path('countries/<int:pk>/', CountryRetrieveAPIView.as_view(), name='country-detail'),
+    path('countries/<int:pk>/update/', CountryUpdateAPIView.as_view(), name='country-update'),
+    path('countries/<int:pk>/retrieve-update/', CountryRetrieveUpdateAPIView.as_view(), name='country-retrieve-update'),
+    path('countries/<int:pk>/delete/', CountryDestroyAPIView.as_view(), name='country-delete'),
+
+    path('cities/', CityListAPIView.as_view(), name='city-list'),
+    path('cities/create/', CityCreateAPIView.as_view(), name='city-create'),
+    path('cities/<int:pk>/', CityRetrieveAPIView.as_view(), name='city-detail'),
+    path('cities/<int:pk>/update/', CityUpdateAPIView.as_view(), name='city-update'),
+    path('cities/<int:pk>/retrieve-update/', CityRetrieveUpdateAPIView.as_view(), name='city-retrieve-update'),
+    path('cities/<int:pk>/delete/', CityDestroyAPIView.as_view(), name='city-delete'),
+
+    path('workers/', WorkerListAPIView.as_view(), name='worker-list'),
+    path('workers/create/', WorkerCreateAPIView.as_view(), name='worker-create'),
+    path('workers/<int:pk>/', WorkerRetrieveAPIView.as_view(), name='worker-detail'),
+    path('workers/<int:pk>/update/', WorkerUpdateAPIView.as_view(), name='worker-update'),
+    path('workers/<int:pk>/retrieve-update/', WorkerRetrieveUpdateAPIView.as_view(), name='worker-retrieve-update'),
+    path('workers/<int:pk>/delete/', WorkerDestroyAPIView.as_view(), name='worker-delete'),
+
+    path('employers/', EmployerListAPIView.as_view(), name='employer-list'),
+    path('employers/create/', EmployerCreateAPIView.as_view(), name='employer-create'),
+    path('employers/<int:pk>/', EmployerRetrieveAPIView.as_view(), name='employer-detail'),
+    path('employers/<int:pk>/update/', EmployerUpdateAPIView.as_view(), name='employer-update'),
+    path('employers/<int:pk>/retrieve-update/', EmployerRetrieveUpdateAPIView.as_view(), name='employer-retrieve-update'),
+    path('employers/<int:pk>/delete/', EmployerDestroyAPIView.as_view(), name='employer-delete'),
+
+    path('vacancy-categories/', VacancyCategoryListAPIView.as_view(), name='vacancy-category-list'),
+    path('vacancy-categories/create/', VacancyCategoryCreateAPIView.as_view(), name='vacancy-category-create'),
+    path('vacancy-categories/<int:pk>/', VacancyCategoryRetrieveAPIView.as_view(), name='vacancy-category-detail'),
+    path('vacancy-categories/<int:pk>/update/', VacancyCategoryUpdateAPIView.as_view(), name='vacancy-category-update'),
+    path('vacancy-categories/<int:pk>/retrieve-update/', VacancyCategoryRetrieveUpdateAPIView.as_view(), name='vacancy-category-retrieve-update'),
+    path('vacancy-categories/<int:pk>/delete/', VacancyCategoryDestroyAPIView.as_view(), name='vacancy-category-delete'),
+
+    path('vacancy-locations/', VacancyLocationListAPIView.as_view(), name='vacancy-location-list'),
+    path('vacancy-locations/create/', VacancyLocationCreateAPIView.as_view(), name='vacancy-location-create'),
+    path('vacancy-locations/<int:pk>/', VacancyLocationRetrieveAPIView.as_view(), name='vacancy-location-detail'),
+    path('vacancy-locations/<int:pk>/update/', VacancyLocationUpdateAPIView.as_view(), name='vacancy-location-update'),
+    path('vacancy-locations/<int:pk>/retrieve-update/', VacancyLocationRetrieveUpdateAPIView.as_view(), name='vacancy-location-retrieve-update'),
+    path('vacancy-locations/<int:pk>/delete/', VacancyLocationDestroyAPIView.as_view(), name='vacancy-location-delete'),
+
+    path('vacancies/', VacancyListAPIView.as_view(), name='vacancy-list'),
+    path('vacancies/create/', VacancyCreateAPIView.as_view(), name='vacancy-create'),
+    path('vacancies/<int:pk>/', VacancyRetrieveAPIView.as_view(), name='vacancy-detail'),
+    path('vacancies/<int:pk>/update/', VacancyUpdateAPIView.as_view(), name='vacancy-update'),
+    path('vacancies/<int:pk>/retrieve-update/', VacancyRetrieveUpdateAPIView.as_view(), name='vacancy-retrieve-update'),
+    path('vacancies/<int:pk>/delete/', VacancyDestroyAPIView.as_view(), name='vacancy-delete'),
+
+    path('applications/', ApplicationListAPIView.as_view(), name='application-list'),
+    path('applications/create/', ApplicationCreateAPIView.as_view(), name='application-create'),
+    path('applications/<int:pk>/', ApplicationRetrieveAPIView.as_view(), name='application-detail'),
+    path('applications/<int:pk>/update/', ApplicationUpdateAPIView.as_view(), name='application-update'),
+    path('applications/<int:pk>/retrieve-update/', ApplicationRetrieveUpdateAPIView.as_view(), name='application-retrieve-update'),
+    path('applications/<int:pk>/delete/', ApplicationDestroyAPIView.as_view(), name='application-delete'),
+]
